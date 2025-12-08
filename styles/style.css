@@ -69,8 +69,6 @@ a {
   background-color: #d9d9d9;
 }
 
-
-
 /* main container */
 
 .content {
@@ -124,12 +122,14 @@ a {
 .search-form__textfield {
   appearance: none;
   width: 225px;
-  background-color: transparent;
+  height: 27px;
+  font-size: 18px;
   color: #fff;
+  background-color: transparent;
   outline: none;
   border: none;
-  border-bottom: 1px solid;
-  border-top: 1px solid;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
 }
 
 .search-form__pseudo-checkbox {
@@ -148,10 +148,15 @@ a {
   height: 100%;
   opacity: 0;
 }
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
 /* Content details */
 
 .content__details {
-  font-family: Oswald,sans-serif;
+  font-family: Oswald, sans-serif;
 }
 
 .title {
@@ -178,7 +183,7 @@ a {
   color: #fff;
   background-color: transparent;
   border: #fff 1px solid;
-  font-family: 'Fira Sans Condensed',sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
 }
 
@@ -191,14 +196,15 @@ a {
   background-color: #545050;
 }
 
-.button:focus-visible {
-  outline: solid;
-}
-
 .search-form__submit-button {
   align-self: flex-end;
   width: 194px;
   height: 34px;
+}
+
+.search-form__submit-button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .more-button {
@@ -220,7 +226,7 @@ a {
 }
 
 .content__video-card-description {
-  font-family: 'Fira Sans Condensed',sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   line-height: 16.2px;
   overflow: hidden;
   line-clamp: 1;
@@ -253,9 +259,14 @@ a {
 }
 
 .search-form__fieldset-title {
-  font-family: 'Fira Sans Condensed',sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 100;
+}
+
+.search-form__label-text:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .content__card-link {
@@ -279,5 +290,26 @@ a {
 }
 
 .content__card-link_current:focus-visible {
-  outline: solid;
+  outline: 1px solid #fff;
+}
+
+.content__video-card:hover {
+  text-decoration: underline;
+}
+
+.content__video-card:active {
+  background-color: #545050;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.search-form__label:has(.search-form__checkbox:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
