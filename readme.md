@@ -1,1 +1,0 @@
-https://github.com/stolenstolen/posmotri-v-okno-fd
